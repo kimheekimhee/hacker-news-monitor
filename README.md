@@ -9,6 +9,7 @@
     프레임워크: Laravel  
     프론트엔드: jQuery  
     백엔드: PHP  
+    IDE: PhpStorm  
     API: Hacker News API  
 
 3. 주요 파일 및 코드 설명  
