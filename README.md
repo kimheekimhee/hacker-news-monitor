@@ -1,30 +1,30 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 1. 프로젝트 개요
-	이름: Hacker News Monitor
-	목적: Hacker News의 최신 기사를 주기적으로 가져와 웹 페이지에 표시합니다.
-	주요 기능: 최신 기사 가져오기, 10초마다 자동 업데이트
+    이름: Hacker News Monitor
+    목적: Hacker News의 최신 기사를 주기적으로 가져와 웹 페이지에 표시합니다.
+    주요 기능: 최신 기사 가져오기, 10초마다 자동 업데이트
 
 2. 기술 스택
-	프레임워크: Laravel
-	프론트엔드: jQuery
-	백엔드: PHP
-	API: Hacker News API
+    프레임워크: Laravel
+    프론트엔드: jQuery
+    백엔드: PHP
+    API: Hacker News API
 
 3. 주요 파일 및 코드 설명
-	3.1.라우트 설정 (routes/web.php)
-		역할: 요청을 적절한 컨트롤러 메서드와 연결합니다.
+    3.1. 라우트 설정 (routes/web.php)
+        역할: 요청을 적절한 컨트롤러 메서드와 연결합니다.
 
-		```
+        ```php
         use App\Http\Controllers\HackerNewsController;
 
-		Route::get('/hacker-news', [HackerNewsController::class, 'index']);
-		Route::get('/fetch-hacker-news', [HackerNewsController::class, 'fetch']);
+        Route::get('/hacker-news', [HackerNewsController::class, 'index']);
+        Route::get('/fetch-hacker-news', [HackerNewsController::class, 'fetch']);
         ```
-    3.2.컨트롤러 (app/Http/Controllers/HackerNewsController.php)
-		역할: 비즈니스 로직을 처리하고 뷰에 데이터를 전달합니다.
+    3.2. 컨트롤러 (app/Http/Controllers/HackerNewsController.php)
+        역할: 비즈니스 로직을 처리하고 뷰에 데이터를 전달합니다.
 
-		```
+        ```php
         namespace App\Http\Controllers;
 
         use App\Models\HackerNews;
@@ -60,11 +60,11 @@
                 return response()->json(['status' => 'success']);
             }
         }
+        ```
+    3.3. 뷰 파일 (resources/views/hackernews/index.blade.php)
+        역할: 사용자에게 데이터를 시각적으로 표시합니다.
 
-        ```
-    3.3.뷰 파일 (resources/views/hackernews/index.blade.php)
-		역할: 사용자에게 데이터를 시각적으로 표시합니다.
-        ```
+        ```html
         <!DOCTYPE html>
         <html>
         <head>
@@ -103,7 +103,8 @@
         ```
     3.4. 데이터베이스 마이그레이션 (database/migrations/2024_06_13_175357_create_hacker_news_table.php)
         역할: 데이터베이스 테이블을 생성합니다.
-        ```
+
+        ```php
         use Illuminate\Database\Migrations\Migration;
         use Illuminate\Database\Schema\Blueprint;
         use Illuminate\Support\Facades\Schema;
@@ -136,6 +137,7 @@
     페이지 리로드: AJAX 요청이 성공하면 페이지를 리로드하여 최신 기사를 표시합니다.
 
 5. 시스템 구성 다이어그램 및 순서도
+    ```
     +---------------------+       +---------------------+
     |   Web Browser       |       |    Hacker News API  |
     |---------------------|       |---------------------|
@@ -159,9 +161,9 @@
     |---------------------|
     | - hacker_news table |
     +---------------------+
+    ```
 
-
-
+    ```
     [Start]
     |
     V
@@ -190,3 +192,4 @@
     |
     V
     [End]
+    ```
