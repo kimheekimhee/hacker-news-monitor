@@ -1,5 +1,8 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
+![main](https://github.com/kimheekimhee/hacker-news-monitor/assets/108660653/1ecb55f1-6185-469b-a4a5-be90f9a41f25)
+
+
 1. 프로젝트 개요  
     이름: Hacker News Monitor  
     목적: Hacker News의 최신 기사를 주기적으로 가져와 웹 페이지에 표시합니다.  
